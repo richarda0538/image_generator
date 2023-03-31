@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ImagiPicto</title>
+        <link href="static\vendor\boxicons\css\boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <!--<link rel="stylesheet" type="text/css" href="D:\Project\Website\static\styles.css">-->
+    </head>
+    <body>
+        <section class="header" style="min-height: 35vh;">
+            <div class="navbar">
+                <div>
+                     <a class="logo" href='/index2'>ImagiPicto</a>
+                </div>
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href='/home'>Home</a></li>
+                        <li><a href='/profile'>Profile</a></li>
+                        <li><a href='/home#features'>Features</a></li>
+                        <li><button class='loginbtn' onclick="window.location.href='/loginRegister'">Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="text-box" style="top: 80%;">
+                <h1>Poster Generation</h1>
+                <p>Create Related Posters</p>
+            </div>
+        </section>
+        <section>
+            <form id="art" class="prompt-input-form" method="post" action="/generatePoster">
+                <input class="prompt-input" type="text" id="poster" name="poster" placeholder="Enter Text" value="{{prompt}}" required>
+                <button id="generate" type="submit" class="generate-image-btn">Generate</button>
+            </form>
+            {% if img_data == null or img_data == "" %}
+            <div class="load-box">
+                <div id="loading" class="loading" hidden></div>
+            </div>
+            {% else %}
+            <img class="center-image" id="picture" src="data:image/jpeg;base64,{{ img_data }}">
+            <center>
+                <div class="download-share">
+                    <a href="data:image/jpeg;base64,{{ img_data }}" download>
+                       <i class="bx bx-download"><p style="font-size: 20px;">Download</p></i>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="bx bx-share-alt"><p style="font-size: 20px;">Share</p></i>
+                </div>
+            </center>
+            
+            {% endif %}
+            <script>
+                const showImageButton = document.getElementById("generate");
+                const myImage = document.getElementById("loading");
+                showImageButton.addEventListener("click", () => {
+                   myImage.hidden = !myImage.hidden;
+                });
+             </script>
+        </section>
+        </div>
+        <footer id="footer">
+            <img class="logo1" src="static\logo.png" height="30%" width="30%">
+            <!--<div class="socialicon">
+              <a href="#"><img  src="static\fb_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\insta_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\twitter_logo.png"></a>
+            </div>-->
+            <div class="copyright">
+              Copyright 2023 ©. All Rights Reserved.
+            </div>
+          </footer>
+    </body>
+</html>

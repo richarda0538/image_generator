@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ImagiPicto</title>
+        <link href="static\vendor\boxicons\css\boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <!--<link rel="stylesheet" type="text/css" href="D:\Project\Website\static\styles.css">-->
+    </head>
+    <body>
+        <section class="header" style="min-height: 35vh;">
+            <div class="navbar">
+                <div>
+                     <a class="logo" href='/index2'>ImagiPicto</a>
+                </div>
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href='/home'>Home</a></li>
+                        <li><a href='/profile'>Profile</a></li>
+                        <li><a href='/home#features'>Features</a></li>
+                        <li><button class='loginbtn' onclick="window.location.href='/loginRegister'">Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="text-box" style="top: 80%;">
+                <h1>Criminal Face Generation</h1>
+                <p>Create the Face of the Criminal</p>
+            </div>
+        </section>
+        <section>
+            <form id="art" class="prompt-input-form" method="post" action="/generateFace">
+                <!-- Facial Features First Row-->
+                <div class="row" style="margin-left: -35%;">
+                    <div class="col-md-3">
+                        <label> 
+                            Gender
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="gender" name="gender" placeholder="eg., Boy, Girl, Man..." value="{{gender}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Age
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="age" name="age" placeholder="eg., ten, twenty..." value="{{age}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Hair
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="hair" name="hair" placeholder="eg., Blonde, Black..." value="{{hair}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Face
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="face" name="face" placeholder="eg., Oval, square..." value="{{face}}" required>
+                    </div>
+                </div>
+                <!--Facial Features Second Row-->
+                <div class="row" style="margin-left: -34%; margin-top: 1%;">
+                    <div class="col-md-3">
+                        <label> 
+                            Eyes
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="eyes" name="eyes" placeholder="eg., Blue, Black..." value="{{eyes}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Nose
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="nose" name="nose" placeholder="eg., Pointy, Big..." value="{{nose}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Lips
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="lips" name="lips" placeholder="eg., Wide, Thin..." value="{{lips}}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Skin
+                        </label>
+                        <input id="cf" class="prompt-input" type="text" id="skin" name="skin" placeholder="eg., Brown, White..." value="{{skin}}" required>
+                    </div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <input class="prompt-input" type="text" id="t2" name="t2" placeholder="Additional Specific Details" value="{{t2}}">
+                    <button id="generate" type="submit" class="generate-image-btn">Generate</button>
+                </div>
+            </form>
+            {% if img_data == null or img_data == "" %}
+            <div class="load-box">
+                <div id="loading" class="loading" hidden></div>
+            </div>
+            {% else %}
+            <img class="center-image" id="picture" src="data:image/jpeg;base64,{{ img_data }}">
+            <center>
+                <div class="download-share">
+                    <a href="data:image/jpeg;base64,{{ img_data }}" download>
+                       <i class="bx bx-download"><p style="font-size: 20px;">Download</p></i>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="bx bx-share-alt"><p style="font-size: 20px;">Share</p></i>
+                </div>
+            </center>
+            
+            {% endif %}
+            <script>
+                const showImageButton = document.getElementById("generate");
+                const myImage = document.getElementById("loading");
+                showImageButton.addEventListener("click", () => {
+                   myImage.hidden = !myImage.hidden;
+                });
+             </script>
+        </section>
+        </div>
+        <footer id="footer">
+            <img class="logo1" src="static\logo.png" height="30%" width="30%">
+            <!--<div class="socialicon">
+              <a href="#"><img  src="static\fb_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\insta_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\twitter_logo.png"></a>
+            </div>-->
+            <div class="copyright">
+              Copyright 2023 ©. All Rights Reserved.
+            </div>
+          </footer>
+    </body>
+</html>

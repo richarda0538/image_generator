@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ImagiPicto</title>
+    
+    <!-- Vendor CSS Files -->
+    <link href="static\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link href="static\vendor\bootstrap-icons\bootstrap-icons.css" rel="stylesheet">
+    <link href="static\vendor\boxicons\css\boxicons.min.css" rel="stylesheet">
+    <link href="static\vendor\glightbox\css\glightbox.min.css" rel="stylesheet">
+    <link href="static\vendor\swiper\swiper-bundle.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="D:\Project\Web Application\static\styles.css">-->
+  </head>
+
+  <body>
+
+    <section id="sec1" style="height: 100vh;" class="header">
+      <div class="navbar">
+        <div>
+            <a class="logo" href='/'>ImagiPicto</a>
+        </div>
+        <nav>
+            <ul id='MenuItems'>
+                <li><a href='#sec1'>Home</a></li>
+                <li><a href='#sec2'>Features</a></li>
+                <li><a href='#sec3'>Procedure</a></li>
+                <li><a href='#footer'>contact Us</a></li>
+                <li><button class='loginbtn' onclick="window.location.href='/loginRegister'">Login</button></li>
+            </ul>
+        </nav>
+      </div>
+
+      <div class="text-box">
+        <h1>Text-to-Image Generator</h1>
+        <p>Convert your imagination into real picture using Deep Learning by just inputting the text</p>
+      </div>
+      <h4 class="scroll-down-text">Scroll Down</h4>
+      <a class="scroll-down" href="#sec2"></a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="sec2" class="index-features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">
+            <img id="img" src="static\art_generation.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>Art Generation</h3>
+            <p class="fst-italic">
+              Create Beautiful Artistic Images
+            </p>
+            <p>
+              You can generate beautiful artistic images by describing the scenario, much detailed description gives much detailed image
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 order-1 order-md-2" style="width:fit-content">
+            <img id="img" src="static\memes_generation.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Meme Generation</h3>
+            <p class="fst-italic">
+              Create Situation Suitable Memes
+            </p>
+            <p>
+              You can generate situation suitable memes by giving the input as describing the situation
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">
+            <img id="img" src="static\criminal_face_generation.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Criminal Face Generation</h3>
+            <p>Cenerate the face of the culprit</p>
+            <p>
+              You can generate the face of the culprit by describing the face features of the culprit
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 order-1 order-md-2" style="width:fit-content">
+            <img id="img" src="static\poster_generation.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Poster Creation</h3>
+            <p class="fst-italic">
+              Create Creative Posters
+            </p>
+            <p>
+              You can generate the poster as required by describing the content
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Procedure Section -->
+    <section id="sec3" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Steps</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title">Login/Register</h4>
+              <p class="description">First Login/ Register to use the features</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bxs-hand-up"></i></div>
+              <h4 class="title">Select the Feature</h4>
+              <p class="description">Select the required feature to generate the image</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-text"></i></div>
+              <h4 class="title">Enter Text</h4>
+              <p class="description">Enter the required text into the given text area</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-download"></i></div>
+              <h4 class="title">Download/Share</h4>
+              <p class="description">You can share and download the generated image</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer id="footer">
+        <img class="logo1" src="static\logo.png" height="30%" width="30%">
+        <!--<div class="socialicon">
+          <a href="#"><img src="static\fb_logo.png"></a>&nbsp;&nbsp;
+          <a href="#"><img src="static\insta_logo.png"></a>&nbsp;&nbsp;
+          <a href="#"><img src="static\twitter_logo.png"></a>
+        </div>-->
+        <div class="copyright">
+          Copyright 2023 ©. All Rights Reserved.
+        </div>
+      </footer>
+
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ImagiPicto</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <!--<link rel="stylesheet" type="text/css" href="D:\Project\Web Application\static\styles.css">-->
+    </head>
+
+    <body>
+
+        <section class="header">
+            <div class="navbar">
+                <div>
+                     <a class="logo" href='/index2'>ImagiPicto</a>
+                </div>
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href='/home'>Home</a></li>
+                        <li><a href='#features'>Features</a></li>
+                        <li><a href='/profile'>Profile</a></li>
+                        <li><button class='loginbtn' onclick="window.location.href='/loginRegister'">Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="text-box">
+                <h1>Image Generation</h1>
+                <p>Create your imagination</p>
+            </div>
+
+        </section>
+
+        <section id="features" class="features">
+            <h1>Select Feature</h1><br><br>
+
+            <div class="row">
+
+                <!--Art Generation Block-->
+                <div class="col" style="background-image: url(static/art_generation.png);">
+                    <a href="/art">
+                        <h2>Art Generation</h2>
+                        <p>Generate Beautiful Artistic Images</p>
+                    </a>
+                </div>
+
+                <!--Memes Generation Block-->
+                <div class="col" style="background-image: url(static/memes_generation.png);">
+                    <a href="/memes_generation">
+                        <h2>Memes Generation</h2>
+                        <p>Generate Beautiful Artistic Images</p>
+                    </a>
+                </div>
+
+                <!--Poster Creation Block-->
+                <div class="col" style="background-image: url(static/poster_generation.png);">
+                    <a href="/poster_generation">
+                        <h2>Poster Creation</h2>
+                        <p>Generate Beautiful Artistic Images</p>
+                    </a>
+                </div>
+
+                <!--Criminal Face Generation Block-->
+                <div class="col" style="background-image: url(static/criminal_face_generation.png);">
+                    <a href="/criminal_face_generation">
+                        <h2>Criminal Face</h2>
+                        <p>Generate Beautiful Artistic Images</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <footer id="footer">
+            <img class="logo1" src="static\logo.png" height="30%" width="30%">
+            <!--<div class="socialicon">
+              <a href="#"><img  src="static\fb_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\insta_logo.png"></a>&nbsp;&nbsp;
+              <a href="#"><img  src="static\twitter_logo.png"></a>
+            </div>-->
+            <div class="copyright">
+              Copyright 2023 ©. All Rights Reserved.
+            </div>
+          </footer>
+    </body>
+</html>
